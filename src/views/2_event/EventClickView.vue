@@ -1,7 +1,11 @@
 <template>
   <div>
-    <button v-on:click="increaseCnt">Add 1</button>
+    <button v-on:click="increaseCnt">+ 1</button>
+    <button v-on:click="decreaseCnt">- 1</button>
     <p>{{ cnt }}</p>
+
+    <input type="number" v-model="v" />
+    <div>{{ v }}</div>
   </div>
 </template>
 
@@ -10,7 +14,8 @@ export default {
   components: {},
   data() {
     return {
-      cnt: 0
+      cnt: 0,
+      v: 0
     }
   },
   setup() {},
@@ -20,6 +25,9 @@ export default {
   methods: {
     increaseCnt() {
       this.cnt += 1
+    },
+    decreaseCnt() {
+      this.cnt -= 1
     }
   }
 }
